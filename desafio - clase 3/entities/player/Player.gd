@@ -2,7 +2,7 @@ extends Sprite
 
 onready var arm = $Arm
 
-var speed = 200 #Pixeles
+var speed = 400 #Pixeles
 
 func initialize(projectile_container):
 	arm.container = projectile_container
