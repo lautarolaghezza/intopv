@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/player.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/cannon.png" type="Texture" id=3]
+[ext_resource path="res://entities/player/Arm.gd" type="Script" id=5]
+[ext_resource path="res://entities/player/PlayerProjectile.tscn" type="PackedScene" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Position2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="Player" type="Sprite"]
+position = Vector2( -0.0635071, 0.165405 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Arm" type="Sprite" parent="."]
+position = Vector2( 1.19439, 0.341255 )
+texture = ExtResource( 3 )
+script = ExtResource( 5 )
+projectile_scene = ExtResource( 6 )
+
+[node name="FirePosition" type="Position2D" parent="Arm"]
+position = Vector2( 20.318, -0.638931 )
+script = SubResource( 1 )
