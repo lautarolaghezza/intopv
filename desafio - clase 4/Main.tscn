@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=2]
@@ -6,13 +6,22 @@
 [ext_resource path="res://entities/enemies/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/enemies/TurretsSpawner.gd" type="Script" id=5]
 [ext_resource path="res://entities/environment/Floor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/environment/Obstacles.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/environment/WinStar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/environment/WinStar.gd" type="Script" id=9]
 
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
 
 [node name="Background" type="TextureRect" parent="."]
-anchor_right = 1.0
+anchor_left = -0.107
+anchor_top = -0.003
+anchor_right = 1.567
 anchor_bottom = 1.0
+margin_left = -126.4
+margin_top = -0.2
+margin_right = 2370.4
+margin_bottom = 555.0
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -22,8 +31,66 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 413.003, 395.272 )
 
-[node name="Floor" parent="." instance=ExtResource( 6 )]
+[node name="LeftWall" parent="." instance=ExtResource( 6 )]
+position = Vector2( -146.076, 220.959 )
+rotation = 1.5708
+scale = Vector2( 5.5, 2 )
+
+[node name="LeftWall2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -275.794, 784.905 )
+rotation = 1.5708
+scale = Vector2( 5.5, 2 )
+
+[node name="RightWall" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3665.29, 217.714 )
+rotation = 1.5708
+scale = Vector2( 5.5, 2.621 )
+
+[node name="RightWall2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3666.39, 701.41 )
+rotation = 1.5708
+scale = Vector2( 5.5, 2.621 )
 
 [node name="TurretsSpawner" type="Node" parent="."]
 script = ExtResource( 5 )
 turret_scene = ExtResource( 4 )
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Obstacles" parent="Obstacles" instance=ExtResource( 7 )]
+position = Vector2( 643.458, 431.518 )
+
+[node name="Obstacles2" parent="Obstacles" instance=ExtResource( 7 )]
+position = Vector2( 643.458, 431.518 )
+
+[node name="Obstacles3" parent="Obstacles" instance=ExtResource( 7 )]
+position = Vector2( 643.458, 431.518 )
+
+[node name="Obstacles4" parent="Obstacles" instance=ExtResource( 7 )]
+position = Vector2( 643.458, 431.518 )
+
+[node name="Obstacles5" parent="Obstacles" instance=ExtResource( 7 )]
+position = Vector2( 1032.97, 428.654 )
+
+[node name="Obstacles6" parent="Obstacles" instance=ExtResource( 7 )]
+position = Vector2( 1483.69, 427.555 )
+
+[node name="Floors" type="Node" parent="."]
+
+[node name="Floor3" parent="Floors" instance=ExtResource( 6 )]
+position = Vector2( 1703.35, 1075.87 )
+
+[node name="Floor5" parent="Floors" instance=ExtResource( 6 )]
+position = Vector2( 3014.82, 1074.77 )
+
+[node name="Floor2" parent="Floors" instance=ExtResource( 6 )]
+position = Vector2( 392.97, 1075.87 )
+
+[node name="Floor4" parent="Floors" instance=ExtResource( 6 )]
+position = Vector2( 1703.78, 512.401 )
+
+[node name="Floor" parent="Floors" instance=ExtResource( 6 )]
+
+[node name="WinStar" parent="." instance=ExtResource( 8 )]
+position = Vector2( -150.407, 1122.67 )
+script = ExtResource( 9 )

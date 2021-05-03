@@ -50,4 +50,4 @@ func _physics_process(delta):
 	position += velocity * delta
 
 func notify_hit():
-	print("ADSDASDASDASDASDASDASDASDASD")
+	print("headshot")

@@ -21,9 +21,14 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Cannon" type="Sprite" parent="."]
+position = Vector2( 0.516125, 0.258064 )
+scale = Vector2( 1.36432, 1 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 projectile_scene = ExtResource( 5 )
 
 [node name="CannonTip" type="Position2D" parent="Cannon"]
-position = Vector2( 15, 0 )
+position = Vector2( 41.9905, -0.645149 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

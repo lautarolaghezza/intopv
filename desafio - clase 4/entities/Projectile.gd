@@ -34,5 +34,5 @@ func _remove():
 
 
 func _on_Projectile_body_entered(body):
-	if body.has_method("notifiy_hit"):
-		body.notify_hit()
+	if body.has_method("notify_hit"):
+		body.notify_hit()	
